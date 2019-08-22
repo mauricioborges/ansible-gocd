@@ -115,6 +115,7 @@ This role can manage the base Go configuration, without losing agent or pipeline
 ### Agents
 * By default one agent will be installed per CPU core available.  You can override this by setting GOCD_AGENT_INSTANCES to a specific value.
 * When multiple agents are installed each is controlled by it's own service (/etc/init.d/go-agentX). If you wish to uninstall the package, you'll need to manually remove those services as they're not recognized by the RPM/DEB.
+* Agents can auto-detect environment groups. Override GOCD_AUTO_REGISTER_ENVIRONMENTS with something appropriate.
 * Agents default to automatic registration with the server using an insecure key.  Override GOCD_AUTO_REGISTER_KEY with something appropriate.
    * Agents are automatically tagged with default resources as appropriate.  These include Linux distribution ("Fedora"), distribution with version ("Fedora-20"), platform ("Linux"), java, and java version ("java-1.7.0_65").  A special resource "OnServer" identifies agents that coexist on the same node as the Go server.
 
